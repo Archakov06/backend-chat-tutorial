@@ -1,0 +1,172 @@
+{
+  "dialogs": [
+    {
+      "_id": "16e68d13b2678d793d340b5fb0c79297d",
+      "text": "Duis do eu culpa ad mollit sit minim quis sunt esse anim. Ex velit sint consequat ipsum fugiat irure consequat ut. Do tempor voluptate magna ipsum id pariatur.",
+      "created_at": "Sun Nov 03 1974 18:49:32 GMT+0000 (UTC)",
+      "user": {
+        "_id": "6e68d13b2678d793d340b5fb0c79297d",
+        "fullname": "Perez Jacobson",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "41b4cc8ffc01aef863dfa8afcbbd0986",
+      "text": "Lorem aute in culpa adipisicing aute aliquip nulla quis irure ea enim ullamco sunt. Consequat deserunt ipsum officia ut officia officia ut tempor tempor qui velit voluptate aliqua. Ad aliquip tempor tempor sint commodo esse deserunt et elit aute Lorem in et.",
+      "created_at": "Thu Apr 21 1977 23:23:36 GMT+0000 (UTC)",
+      "user": {
+        "_id": "41b4cc8ffc01aef863dfa8afcbbd0986",
+        "fullname": "Fitzgerald Eaton",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "e079c8cddf392c639c7e77481717352a",
+      "text": "Irure proident consequat ipsum dolore do Lorem mollit ad sit id. Consequat non exercitation sunt nostrud laborum consequat quis ea. Eiusmod occaecat excepteur do occaecat elit id aliqua dolore deserunt ea.",
+      "created_at": "Wed May 15 1985 16:40:53 GMT+0000 (UTC)",
+      "user": {
+        "_id": "e079c8cddf392c639c7e77481717352a",
+        "fullname": "Stanton Alford",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "6e68d13b2678d793d340b5fb0c79297d",
+      "text": "Ut elit enim enim cupidatat ut velit eiusmod. Duis sint labore non velit elit qui do sunt in non nisi. Consectetur deserunt irure magna mollit aute.",
+      "created_at": "Wed Sep 19 1979 20:02:43 GMT+0000 (UTC)",
+      "user": {
+        "_id": "6e68d13b2678d793d340b5fb0c79297d",
+        "fullname": "Preston Cohen",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "f31af49941293524c86c746c10e72f0d",
+      "text": "Eiusmod commodo velit proident sint enim. Commodo cupidatat laboris anim nisi id dolor fugiat sint adipisicing. Anim exercitation enim consequat duis.",
+      "created_at": "Sun Jun 25 2017 16:15:58 GMT+0000 (UTC)",
+      "user": {
+        "_id": "f31af49941293524c86c746c10e72f0d",
+        "fullname": "Lenore Vinson",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "2f0405c6a12d20a5acbd91db41c016b8",
+      "text": "Minim ad consectetur consectetur laborum do consequat Lorem nisi mollit ex aute anim consectetur voluptate. Nostrud Lorem velit duis ut esse cillum exercitation occaecat. Adipisicing labore aliqua in ut fugiat labore magna.",
+      "created_at": "Wed Apr 01 1970 14:35:56 GMT+0000 (UTC)",
+      "user": {
+        "_id": "2f0405c6a12d20a5acbd91db41c016b8",
+        "fullname": "Audrey Lopez",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "24c931d4acbec73f8d5f0265c8f1d413",
+      "text": "Mollit officia amet commodo labore laborum exercitation irure. Excepteur reprehenderit occaecat ipsum nisi consequat duis consectetur mollit occaecat qui officia. Et consequat eiusmod duis eu eiusmod veniam cupidatat mollit laboris est.",
+      "created_at": "Sun Jun 25 2006 06:37:23 GMT+0000 (UTC)",
+      "user": {
+        "_id": "24c931d4acbec73f8d5f0265c8f1d413",
+        "fullname": "Mona Benton",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "cb20a36a653a59a3854c00d6c61ab3c8",
+      "text": "Quis cillum cillum pariatur Lorem excepteur proident consectetur sit elit est quis eu in. Sint qui labore quis quis cupidatat dolore laborum commodo dolore nisi dolor commodo et incididunt. Proident reprehenderit Lorem occaecat nisi laborum tempor est incididunt.",
+      "created_at": "Wed Apr 24 2013 15:52:05 GMT+0000 (UTC)",
+      "user": {
+        "_id": "cb20a36a653a59a3854c00d6c61ab3c8",
+        "fullname": "Bethany Oconnor",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "140ed62cb052f591a5f2999288357281",
+      "text": "Ad proident amet minim officia consectetur aliqua minim exercitation. Quis dolor pariatur eu excepteur. Sit adipisicing laboris sit nostrud in velit enim occaecat ipsum.",
+      "created_at": "Thu Sep 23 1982 04:11:53 GMT+0000 (UTC)",
+      "user": {
+        "_id": "140ed62cb052f591a5f2999288357281",
+        "fullname": "Tisha Duke",
+        "avatar": null
+      }
+    },
+    {
+      "_id": "fa568cb4abc8dbb53f03432442481e22",
+      "text": "Ipsum nulla et in cillum ea commodo cupidatat proident. Id ipsum consequat minim ullamco reprehenderit quis aliqua duis quis. Anim eu aliquip laboris velit aliquip ea.",
+      "created_at": "Mon May 02 1983 03:30:11 GMT+0000 (UTC)",
+      "user": {
+        "_id": "fa568cb4abc8dbb53f03432442481e22",
+        "fullname": "Irma Lester",
+        "avatar": null
+      }
+    }
+  ],
+  "messages": [
+    {
+      "_id": "35ce83ca80a9906817c95cbe0",
+      "text": ":santa: Ea deserunt exercitation sit irure aliqua ea. Nostrud est veniam eiusmod cillum duis exercitation veniam ad. Commodo occaecat veniam tempor ad dolor.",
+      "created_at": "Mon Jul 17 1978 15:23:39 GMT+0000 (UTC)",
+      "user": {
+        "_id": "35ce83ca8dbf6c8e9d04dfe95",
+        "fullname": "Stafford Whitley",
+        "avatar": null
+      },
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
+    },
+    {
+      "_id": "35ce83ca8371d66a6490a6629",
+      "text": "Excepteur voluptate reprehenderit duis duis fugiat reprehenderit consectetur nisi. Anim nulla amet aliquip Lorem culpa. Labore voluptate non Lorem irure adipisicing.",
+      "created_at": "Tue Sep 04 1990 21:13:48 GMT+0000 (UTC)",
+      "user": {
+        "_id": "45ce83ca849b6f9d7ac27fe2c",
+        "fullname": "Nettie Cobb",
+        "avatar": null
+      },
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
+    },
+    {
+      "_id": "25ce83ca8e64e10b218c412b1",
+      "text": "Est nostrud irure ut cupidatat pariatur qui aliqua excepteur reprehenderit commodo amet. Fugiat dolor cillum esse consequat enim sunt ullamco elit nulla. Dolor elit pariatur in ad nisi sint ea incididunt.",
+      "created_at": "Wed Oct 06 1982 09:45:38 GMT+0000 (UTC)",
+      "user": {
+        "_id": "15ce83ca89d3f3deef8240962",
+        "fullname": "Cole Merritt",
+        "avatar": null
+      },
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
+    },
+    {
+      "_id": "45ce83ca83ebd82413d9507c5",
+      "text": "Duis ad nulla in commodo adipisicing reprehenderit aliqua consequat ex anim quis. Veniam sit excepteur consequat non eiusmod dolore sunt sint culpa aute duis id exercitation. Mollit veniam pariatur sint esse eiusmod in deserunt elit enim.",
+      "created_at": "Mon Jun 13 2011 09:20:49 GMT+0000 (UTC)",
+      "user": {
+        "_id": "15ce83ca840b57ddc4c86a9f9",
+        "fullname": "Haley Norman",
+        "avatar": null
+      },
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
+    },
+    {
+      "_id": "35ce83ca83f2ba0b7649c43cb",
+      "text": "Привет! 😃",
+      "created_at": "Mon Jun 08 1992 04:57:55 GMT+0000 (UTC)",
+      "user": {
+        "_id": "35ce83ca8f41ffe5a11c0b72c",
+        "fullname": "Jacobs Barry",
+        "avatar": null
+      },
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
+    },
+    {
+      "_id": "35ce83ca89d0fdae4548a8a8c",
+      "text": "Ау, ты где? 😒",
+      "created_at": "Tue Oct 27 2009 08:28:44 GMT+0000 (UTC)",
+      "user": {
+        "_id": "15ce83ca8038d9699c179048e",
+        "fullname": "Short Doyle",
+        "avatar": null
+      },
+      "dialog": "6e68d13b2678d793d340b5fb0c79297d"
+    }
+  ]
+}
