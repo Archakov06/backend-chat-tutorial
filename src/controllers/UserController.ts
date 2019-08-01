@@ -35,31 +35,14 @@ class UserController {
 
   getMe = (req: any, res: express.Response) => {
     const id: string = req.user._id;
-    UserModel.findById(id, (err, user) => {
-      if (err) {
+    UserModel.findById(id, (err, user: any) => {
+      if (err || !user) {
         return res.status(404).json({
           message: "User not found"
         });
       }
       res.json(user);
     });
-  };
-
-  create = (req: express.Request, res: express.Response) => {
-    const postData = {
-      email: req.body.email,
-      fullname: req.body.fullname,
-      password: req.body.password
-    };
-    const user = new UserModel(postData);
-    user
-      .save()
-      .then((obj: any) => {
-        res.json(obj);
-      })
-      .catch(reason => {
-        res.json(reason);
-      });
   };
 
   delete = (req: express.Request, res: express.Response) => {
@@ -79,6 +62,66 @@ class UserController {
       });
   };
 
+  create = (req: express.Request, res: express.Response) => {
+    const postData = {
+      email: req.body.email,
+      fullname: req.body.fullname,
+      password: req.body.password
+    };
+
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+
+    const user = new UserModel(postData);
+
+    user
+      .save()
+      .then((obj: any) => {
+        res.json(obj);
+      })
+      .catch(reason => {
+        res.status(500).json({
+          status: "error",
+          message: reason
+        });
+      });
+  };
+
+  verify = (req: express.Request, res: express.Response) => {
+    const hash = req.query.hash;
+
+    if (!hash) {
+      return res.status(422).json({ errors: "Invalid hash" });
+    }
+
+    UserModel.findOne({ confirm_hash: hash }, (err, user) => {
+      if (err || !user) {
+        return res.status(404).json({
+          status: "error",
+          message: "Hash not found"
+        });
+      }
+
+      user.confirmed = true;
+      user.save(err => {
+        if (err) {
+          return res.status(404).json({
+            status: "error",
+            message: err
+          });
+        }
+
+        res.json({
+          status: "success",
+          message: "Аккаунт успешно подтвержден!"
+        });
+      });
+    });
+  };
+
   login = (req: express.Request, res: express.Response) => {
     const postData = {
       email: req.body.email,
@@ -86,6 +129,7 @@ class UserController {
     };
 
     const errors = validationResult(req);
+
     if (!errors.isEmpty()) {
       return res.status(422).json({ errors: errors.array() });
     }
@@ -104,7 +148,7 @@ class UserController {
           token
         });
       } else {
-        res.json({
+        res.status(403).json({
           status: "error",
           message: "Incorrect password or email"
         });
