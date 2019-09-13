@@ -8,7 +8,7 @@ messages:
 - _id
 - text
 - dialog
-- unread
+- readed
 - created_at, updated_at
 
 users:

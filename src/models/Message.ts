@@ -10,7 +10,7 @@ export interface IMessage extends Document {
     ref: string;
     require: true;
   };
-  unread: {
+  readed: {
     type: boolean;
     defaul: boolean;
   };
@@ -23,13 +23,15 @@ const MessageSchema = new Schema(
     text: { type: String, require: Boolean },
     dialog: { type: Schema.Types.ObjectId, ref: "Dialog", require: true },
     user: { type: Schema.Types.ObjectId, ref: "User", require: true },
-    unread: {
+    readed: {
       type: Boolean,
       default: false
-    }
+    },
+    attachments: [{ type: Schema.Types.ObjectId, ref: "UploadFile" }]
   },
   {
-    timestamps: true
+    timestamps: true,
+    usePushEach: true
   }
 );
 
