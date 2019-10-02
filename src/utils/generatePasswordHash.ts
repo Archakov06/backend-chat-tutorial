@@ -1,6 +1,6 @@
-import bcrypt from "bcrypt";
+import bcrypt from 'bcrypt';
 
-export default (password: string | number = "") => {
+export default (password: string) => {
   return new Promise((resolve, reject) => {
     bcrypt.hash(password, 10, function(err, hash: string) {
       if (err) return reject(err);
