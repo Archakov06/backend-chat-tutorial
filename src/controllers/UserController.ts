@@ -20,7 +20,7 @@ class UserController {
     UserModel.findById(id, (err, user) => {
       if (err) {
         return res.status(404).json({
-          message: 'User not found',
+          message: 'User not found'
         });
       }
       res.json(user);
@@ -32,7 +32,7 @@ class UserController {
     UserModel.findById(id, (err, user: any) => {
       if (err || !user) {
         return res.status(404).json({
-          message: 'User not found',
+          message: 'User not found'
         });
       }
       res.json(user);
@@ -42,12 +42,15 @@ class UserController {
   findUsers = (req: any, res: express.Response) => {
     const query: string = req.query.query;
     UserModel.find()
-      .or([{ fullname: new RegExp(query, 'i') }, { email: new RegExp(query, 'i') }])
+      .or([
+        { fullname: new RegExp(query, 'i') },
+        { email: new RegExp(query, 'i') }
+      ])
       .then((users: any) => res.json(users))
       .catch((err: any) => {
         return res.status(404).json({
           status: 'error',
-          message: err,
+          message: err
         });
       });
   };
@@ -58,13 +61,13 @@ class UserController {
       .then(user => {
         if (user) {
           res.json({
-            message: `User ${user.fullname} deleted`,
+            message: `User ${user.fullname} deleted`
           });
         }
       })
       .catch(() => {
         res.json({
-          message: `User not found`,
+          message: `User not found`
         });
       });
   };
@@ -73,7 +76,7 @@ class UserController {
     const postData = {
       email: req.body.email,
       fullname: req.body.fullname,
-      password: req.body.password,
+      password: req.body.password
     };
 
     const errors = validationResult(req);
@@ -93,21 +96,21 @@ class UserController {
             from: 'admin@test.com',
             to: postData.email,
             subject: 'Подтверждение почты React Chat Tutorial',
-            html: `Для того, чтобы подтвердить почту, перейдите <a href="http://localhost:3000/signup/verify?hash=${obj.confirm_hash}">по этой ссылке</a>`,
+            html: `Для того, чтобы подтвердить почту, перейдите <a href="http://localhost:3000/signup/verify?hash=${obj.confirm_hash}">по этой ссылке</a>`
           },
-          function(err, info) {
+          function(err: any, info: any) {
             if (err) {
               console.log(err);
             } else {
               console.log(info);
             }
-          },
+          }
         );
       })
       .catch(reason => {
         res.status(500).json({
           status: 'error',
-          message: reason,
+          message: reason
         });
       });
   };
@@ -123,7 +126,7 @@ class UserController {
       if (err || !user) {
         return res.status(404).json({
           status: 'error',
-          message: 'Hash not found',
+          message: 'Hash not found'
         });
       }
 
@@ -132,13 +135,13 @@ class UserController {
         if (err) {
           return res.status(404).json({
             status: 'error',
-            message: err,
+            message: err
           });
         }
 
         res.json({
           status: 'success',
-          message: 'Аккаунт успешно подтвержден!',
+          message: 'Аккаунт успешно подтвержден!'
         });
       });
     });
@@ -147,7 +150,7 @@ class UserController {
   login = (req: express.Request, res: express.Response) => {
     const postData = {
       email: req.body.email,
-      password: req.body.password,
+      password: req.body.password
     };
 
     const errors = validationResult(req);
@@ -159,7 +162,7 @@ class UserController {
     UserModel.findOne({ email: postData.email }, (err, user: IUser) => {
       if (err || !user) {
         return res.status(404).json({
-          message: 'User not found',
+          message: 'User not found'
         });
       }
 
@@ -167,12 +170,12 @@ class UserController {
         const token = createJWToken(user);
         res.json({
           status: 'success',
-          token,
+          token
         });
       } else {
         res.status(403).json({
           status: 'error',
-          message: 'Incorrect password or email',
+          message: 'Incorrect password or email'
         });
       }
     });

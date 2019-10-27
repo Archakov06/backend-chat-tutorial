@@ -1,5 +1,11 @@
-import express from "express";
-import { UserModel } from "../models";
+import express from 'express';
+import { UserModel } from '../models';
+
+declare module 'express' {
+  export interface Request {
+    user?: any;
+  }
+}
 
 export default (
   req: express.Request,
@@ -8,7 +14,7 @@ export default (
 ) => {
   if (req.user) {
     UserModel.findOneAndUpdate(
-      { _id: req.user._id },
+      { _id: req.user.id },
       {
         last_seen: new Date()
       },
