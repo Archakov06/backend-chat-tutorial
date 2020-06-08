@@ -1,12 +1,28 @@
-import jwt from 'jsonwebtoken';
+import jwt, { VerifyErrors } from "jsonwebtoken";
+import { IUser } from "../models/User";
 
-export default (token: string) =>
-  new Promise((resolve, reject) => {
-    jwt.verify(token, process.env.JWT_SECRET || '', (err, decodedData) => {
-      if (err || !decodedData) {
-        return reject(err);
-      }
+export interface DecodedData {
+  data: {
+    _doc: IUser;
+  };
+}
 
-      resolve(decodedData);
-    });
-  });
+export default (token: string): Promise<DecodedData | null> =>
+  new Promise(
+    (
+      resolve: (decodedData: DecodedData) => void,
+      reject: (err: VerifyErrors) => void
+    ) => {
+      jwt.verify(
+        token,
+        process.env.JWT_SECRET || "",
+        (err: VerifyErrors, decodedData) => {
+          if (err || !decodedData) {
+            return reject(err);
+          }
+
+          resolve(decodedData as DecodedData);
+        }
+      );
+    }
+  );

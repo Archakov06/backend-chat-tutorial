@@ -10,7 +10,7 @@ import {
   UserCtrl,
   DialogCtrl,
   MessageCtrl,
-  UploadFileCtrl
+  UploadFileCtrl,
 } from "../controllers";
 
 const createRoutes = (app: express.Express, io: socket.Server) => {
@@ -22,6 +22,10 @@ const createRoutes = (app: express.Express, io: socket.Server) => {
   app.use(bodyParser.json());
   app.use(checkAuth);
   app.use(updateLastSeen);
+
+  app.get("/", (_: express.Request, res: express.Response) => {
+    res.send("Hello, World!");
+  });
 
   app.get("/user/me", UserController.getMe);
   app.get("/user/verify", UserController.verify);

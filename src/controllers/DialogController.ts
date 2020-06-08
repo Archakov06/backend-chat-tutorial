@@ -10,7 +10,7 @@ class DialogController {
     this.io = io;
   }
 
-  index = (req: any, res: express.Response) => {
+  index = (req: express.Request, res: express.Response): void => {
     const userId = req.user._id;
 
     DialogModel.find()
@@ -22,7 +22,7 @@ class DialogController {
           path: 'user',
         },
       })
-      .exec(function(err, dialogs) {
+      .exec(function (err, dialogs) {
         if (err) {
           return res.status(404).json({
             message: 'Dialogs not found',
@@ -32,7 +32,7 @@ class DialogController {
       });
   };
 
-  create = (req: express.Request, res: express.Response) => {
+  create = (req: express.Request, res: express.Response): void => {
     const postData = {
       author: req.user._id,
       partner: req.body.partner,
@@ -43,14 +43,14 @@ class DialogController {
         author: req.user._id,
         partner: req.body.partner,
       },
-      (err, user) => {
+      (err, dialog) => {
         if (err) {
           return res.status(500).json({
             status: 'error',
             message: err,
           });
         }
-        if (user) {
+        if (dialog) {
           return res.status(403).json({
             status: 'error',
             message: 'Такой диалог уже есть',
@@ -60,7 +60,7 @@ class DialogController {
 
           dialog
             .save()
-            .then((dialogObj: any) => {
+            .then((dialogObj) => {
               const message = new MessageModel({
                 text: req.body.text,
                 user: req.user._id,
@@ -79,11 +79,11 @@ class DialogController {
                     });
                   });
                 })
-                .catch(reason => {
+                .catch((reason) => {
                   res.json(reason);
                 });
             })
-            .catch(err => {
+            .catch((err) => {
               res.json({
                 status: 'error',
                 message: err,
@@ -94,10 +94,10 @@ class DialogController {
     );
   };
 
-  delete = (req: express.Request, res: express.Response) => {
+  delete = (req: express.Request, res: express.Response): void => {
     const id: string = req.params.id;
     DialogModel.findOneAndRemove({ _id: id })
-      .then(dialog => {
+      .then((dialog) => {
         if (dialog) {
           res.json({
             message: `Dialog deleted`,

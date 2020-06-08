@@ -1,8 +1,15 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-mongoose.connect('mongodb://localhost:27017/chat', {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
-});
+mongoose.connect(
+  "mongodb://localhost:27017/chat",
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  },
+  (err: any) => {
+    if (err) {
+      throw Error(err);
+    }
+  }
+);

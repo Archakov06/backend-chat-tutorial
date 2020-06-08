@@ -14,8 +14,8 @@ const io = createSocket(http);
 
 createRoutes(app, io);
 
-const PORT = process.env.PORT || 3003;
+const PORT: number = process.env.PORT ? Number(process.env.PORT) : 3003;
 
-http.listen(PORT, function() {
+http.listen(PORT, function () {
   console.log(`Server: http://localhost:${PORT}`);
 });

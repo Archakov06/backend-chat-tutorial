@@ -1,7 +1,7 @@
-import mongoose, { Schema, Document } from 'mongoose';
-import { isEmail } from 'validator';
-import { generatePasswordHash } from '../utils';
-import differenceInMinutes from 'date-fns/difference_in_minutes';
+import mongoose, { Schema, Document } from "mongoose";
+import { isEmail } from "validator";
+import { generatePasswordHash } from "../utils";
+import differenceInMinutes from "date-fns/difference_in_minutes";
 
 export interface IUser extends Document {
   email: string;
@@ -9,25 +9,26 @@ export interface IUser extends Document {
   password: string;
   confirmed: boolean;
   avatar: string;
-  confirm_hash?: string;
-  last_seen?: Date;
+  confirm_hash: string;
+  last_seen: Date;
+  data?: IUser;
 }
 
-const UserSchema = new Schema(
+const UserSchema: Schema = new Schema(
   {
     email: {
       type: String,
-      require: 'Email address is required',
-      validate: [isEmail, 'Invalid email'],
+      require: "Email address is required",
+      validate: [isEmail, "Invalid email"],
       unique: true,
     },
     fullname: {
       type: String,
-      required: 'Fullname is required',
+      required: "Fullname is required",
     },
     password: {
       type: String,
-      required: 'Password is required',
+      required: "Password is required",
     },
     confirmed: {
       type: Boolean,
@@ -42,21 +43,22 @@ const UserSchema = new Schema(
   },
   {
     timestamps: true,
-  },
+  }
 );
 
-UserSchema.virtual('isOnline').get(function(this: any) {
+UserSchema.virtual("isOnline").get(function (this: any) {
   return differenceInMinutes(new Date().toISOString(), this.last_seen) < 5;
 });
 
-UserSchema.set('toJSON', {
+UserSchema.set("toJSON", {
   virtuals: true,
 });
 
-UserSchema.pre('save', async function(next) {
-  const user: any = this;
+UserSchema.pre<IUser>("save", async function (next) {
+  // eslint-disable-next-line @typescript-eslint/no-this-alias
+  const user = this;
 
-  if (!user.isModified('password')) {
+  if (!user.isModified("password")) {
     return next();
   }
 
@@ -64,6 +66,6 @@ UserSchema.pre('save', async function(next) {
   user.confirm_hash = await generatePasswordHash(new Date().toString());
 });
 
-const UserModel = mongoose.model<IUser>('User', UserSchema);
+const UserModel = mongoose.model<IUser>("User", UserSchema);
 
 export default UserModel;

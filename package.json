@@ -5,9 +5,14 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "watch": "nodemon"
+    "eslint": "eslint --ext .ts,.js --fix --quiet .",
+    "watch": "nodemon ts-node src/index.ts"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "eslint": "^7.2.0",
+    "prettier": "^2.0.5",
     "json-server": "^0.15.0"
   },
   "dependencies": {
@@ -18,7 +23,7 @@
     "@types/jsonwebtoken": "^8.3.2",
     "@types/lodash": "^4.14.135",
     "@types/mongoose": "^5.5.6",
-    "@types/multer": "^1.3.8",
+    "@types/multer": "^1.4.3",
     "@types/node": "^12.0.10",
     "@types/nodemailer": "^6.2.1",
     "@types/passport": "^1.0.0",
@@ -26,12 +31,12 @@
     "@types/validator": "^10.11.1",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
-    "cloudinary": "^1.14.0",
+    "cloudinary": "^1.22.0",
     "cors": "^2.8.5",
     "date-fns": "^1.30.1",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "express-validator": "^6.1.1",
+    "express-validator": "^6.5.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.11",
     "mongoose": "^5.6.2",
@@ -42,5 +47,13 @@
     "ts-node": "^8.3.0",
     "typescript": "^3.5.2",
     "validator": "^11.0.0"
+  },
+  "prettier": {
+    "prettier.tabWidth": 2,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "all",
+    "prettier.semi": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.printWidth": 100
   }
 }

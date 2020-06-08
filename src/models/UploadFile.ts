@@ -1,13 +1,17 @@
 import mongoose, { Schema, Document } from "mongoose";
+import { IUser } from "./User";
+import { IMessage } from "./Message";
 
-export interface IUploadFile extends Document {
+export interface IUploadFile {
   filename: string;
   size: number;
   ext: string;
   url: string;
-  message: string;
-  user: string;
+  message: IMessage | string;
+  user: IUser | string;
 }
+
+export type IUploadFileDocument = Document & IUploadFile;
 
 const UploadFileSchema = new Schema(
   {
@@ -16,14 +20,14 @@ const UploadFileSchema = new Schema(
     ext: String,
     url: String,
     message: { type: Schema.Types.ObjectId, ref: "Message", require: true },
-    user: { type: Schema.Types.ObjectId, ref: "User", require: true }
+    user: { type: Schema.Types.ObjectId, ref: "User", require: true },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
-const UploadFileModel = mongoose.model<IUploadFile>(
+const UploadFileModel = mongoose.model<IUploadFileDocument>(
   "UploadFile",
   UploadFileSchema
 );
